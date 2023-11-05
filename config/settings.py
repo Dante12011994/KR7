@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
 
     'user',
     'habits',
@@ -155,4 +156,13 @@ CELERY_BEAT_SCHEDULE = {
     },
 }
 
-TELEGRAM_TOKEN = '6854604997:AAFvgaMVUV1YfkiX0-4XELTFm6SrHapTDeg'
+TELEGRAM_TOKEN = os.getenv('TG_api_key')
+
+CORS_ALLOWED_ORIGINS = [
+    "https://read-only.example.com",
+    "https://read-and-write.example.com",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://read-and-write.example.com",
+]

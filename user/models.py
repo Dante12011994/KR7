@@ -9,6 +9,7 @@ class User(AbstractUser):
     """
     username = None
     email = models.EmailField(unique=True, verbose_name='Email')
+    id_telegram = models.IntegerField(verbose_name="telergam ID", null=True, blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
